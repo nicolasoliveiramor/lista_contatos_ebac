@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de contato</title>
+    <link rel="stylesheet" href="./main.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" alt="numero do contato" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" alt="nome do contato" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lista de contato</h1>
+        </header>
+        <form id="form-contato">
+            <input id="nome-pessoa" type="text" required placeholder="Nome da pessoa" />
+            <input id="telefone-do-contato" type="number" required placeholder="Telefone do contato" />
+            <button type="submit">Adicionar</button>
+        </form>
+        <table cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Nome da pessoa</th>
+                    <th>Telefone da pessoa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="adiciona-pessoa"></td>
+                    <td id="adiciona-telefone"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+    </div>
+
+    <script src=".main/js"></script>
+
+</body>
+</html>
