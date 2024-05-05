@@ -3,17 +3,14 @@ form.addEventListener('submit', function (e) {
     
     verificarCadastro();    
     
-    adicionarContato();
 }); 
 
 function verificarCadastro() {
-
-    
     let nome = document.getElementById("nome").value;
     let telefone = document.getElementById("telefone").value;
     
     if (nome === '' || telefone === '') {
-        alert('Por favor preenche todos os campos')
+        alert('Por favor preencha todos os campos')
     } else {
         
     let tabela = document.getElementById("tabela-contatos");
@@ -23,11 +20,19 @@ function verificarCadastro() {
             let celulaNome = linhas[i].cells[0];
             let nomeExistente = celulaNome.textContent.trim();
 
-            let regex = new RegExp("^" + nome + "$", "i");
-            if (regex.test(nomeExistente)) {
-                alert("Este nome já está cadastrado na agenda.");
+            let celulaTelefone = linhas [i].cells[1];
+            let telefoneExistente = celulaTelefone.textContent.trim();
+            
+            if (telefoneExistente === telefone){
+                alert(`Este telefone ${telefone} já pertence a outro contato.`);
                 return;
             }
+
+            if (nomeExistente.toLowerCase() === nome.toLowerCase()) {
+                alert(`Este contato com o nome: ${nome} já está cadastrado.`);
+                return;
+            }
+
         }
         adicionarContato(nome, telefone);
     }
