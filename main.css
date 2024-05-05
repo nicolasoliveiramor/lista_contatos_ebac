@@ -5,9 +5,13 @@
     font-family: sans-serif;
 }
 
+html, body {
+    max-height: 480px;
+    height: 100%;
+}
+
 body {
-    background-color: #E7E7E7;
-    padding-top: 75px;
+    background-color: #2E2E2E;
 }
 
 header {
@@ -15,68 +19,75 @@ header {
     width: 100%;
     display: flex;
     align-items: center;
-    margin-bottom: 42px;
-    border-bottom: 2px solid black ;
+    border-bottom: 2px solid white;
+    padding: 20px;
 }
 
-header h1 {
+h1 {
     font-size: 40px;
     font-weight: bold;
-    transform: translate(45%, -40%);
+    color: #E7E7E7;
+    text-align: center;
+    margin-bottom: 24px;
 }
 
 .container {
-    max-width: 840px;
+    max-width: 860px;
     width: 100%;
-    position: absolute; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-35%, -100%);
+    margin: 0 auto;
+    background-color: #2E2E2E;
+    border: 8px solid white;
+    padding: 20px;
+    margin-top: 3%;
 }
 
 form {
-    display: flex;
     max-width: 580px;
     width: 100%;
+    display: flex;
     justify-content: space-between;
-    margin-bottom: 42px;
+    margin-bottom: 20px;
+    margin-left: 14%;
 }
 
 form input {
     font-size: 18px;
     background-color: white;
     border: none;
-    cursor: pointer;
-    padding: 6px;
+    padding: 8px;
     border-radius: 6px;
 }
 
 form button {
     border: none;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     font-weight: bold;
-    padding: 6px;
     border-radius: 6px;
-    cursor: pointer;
+    padding: 8px;
 }
 
 table {
     max-width: 580px;
     width: 100%;
+    margin: 0 auto;
 }
 
-table th {
-    border-bottom: 2px solid black;
+table th, table td {
+    border-bottom: 2px solid white;
     padding: 16px;
+    font-size: 16px;
     font-weight: bold;
-}
-
-table td {
-    padding: 16px 0;
+    color: white;
     text-align: center;
 }
 
+span {
+    vertical-align: middle;
+}
 
-
-
+footer {
+    color: white;
+    margin-top: 15px;
+    text-align: center;
+}

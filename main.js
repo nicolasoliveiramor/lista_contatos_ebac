@@ -1,60 +1,52 @@
-const form = document.getElementById('form-contato')
-
-const imgPessoaContato = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" alt="nome do contato" />'
-
-const imgAddContato = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" alt="numero do contato" />'
-
-const pessoa = []
-const telefone = []
-
-const spanPessoaContato = imgPessoaContato
-const spanTelefoneContato = imgAddContato
-
-let linhas = ''
-
 form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    
+    verificarCadastro();    
+    
+    adicionarContato();
+}); 
 
-    e.preventDefault()
+function verificarCadastro() {
 
-    adicionaLinha()
-
-    atulizaLista()
-
-})
-
-function adicionaLinha() {
-
-    const inputNomePessoa = document.getElementById('nome-pessoa')
-
-    const inputTelPessoa = document.getElementById('telefone-do-contato')
-
-    if ((telefone.includes(inputTelPessoa.value)) && (pessoa.includes(inputNomePessoa.value))) {
-        alert(`Este contato: ${inputNomePessoa.value} com o número: ${inputTelPessoa.value} já existe em sua lista.`)
+    
+    let nome = document.getElementById("nome").value;
+    let telefone = document.getElementById("telefone").value;
+    
+    if (nome === '' || telefone === '') {
+        alert('Por favor preenche todos os campos')
     } else {
-        telefone.push(inputTelPessoa.value)
-        pessoa.push(inputNomePessoa.value)
+        // Verificar se o nome já está na tabela
+    let tabela = document.getElementById("tabelaContatos");
+    let linhas = tabela.rows;
 
-        let linha = '<tr>'
+    for (let i = 1; i < linhas.length; i++) {
+            let celulaNome = linhas[i].cells[0];
+            let nomeExistente = celulaNome.textContent.trim();
 
-        linha += `<td>${inputNomePessoa}</td>`
-        linha += `<td>${inputTelPessoa}</td>`
-
-        linhas += linha
+            // Usar expressão regular para fazer a comparação
+            let regex = new RegExp("^" + nome + "$", "i");
+            if (regex.test(nomeExistente)) {
+                alert("Este nome já está cadastrado na agenda.");
+                return;
+            }
+        }
+        adicionarContato(nome, telefone);
     }
-
-    inputNomePessoa.value = ''
-    inputTelPessoa.value = ''
-
 }
 
-function adicionaLinha() {
-    const corpoLista = document.querySelector('tbody')
+function adicionarContato(nome, telefone) {
+    let tabela = document.getElementById("tabelaContatos");
+    let novaLinha = tabela.insertRow(-1);
+    
+    // Insere células para nome e telefone
+    let celulaNome = novaLinha.insertCell(0);
+    let celulaTelefone = novaLinha.insertCell(1); 
 
-    corpoLista.innerHTML = linhas
-}
+    // Define o conteúdo das células
+    celulaNome.textContent = nome;
+    celulaTelefone.textContent = telefone;
 
-function atulizaLista() {
-
-    document.getElementById('adiciona-pessoa').innerHTML = spanPessoaContato
-    document.getElementById('adiciona-telefone').innerHTML = spanTelefoneContato
+    // Limpar os campos do formulário após adicionar o contato
+    document.getElementById("nome").value = "";
+    document.getElementById("telefone").value = "";
 }
