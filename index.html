@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda de Contato</title>
+    <title>Lista de Contato</title>
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -14,13 +14,13 @@
 
         <h1>Lista de Contatos</h1>
         
-        <form id="formContato">
+        <form id="form-contato">
             <input class="form-input" type="text" id="nome" name="nome" placeholder="Nome do contato" required>
             <input class="form-input" type="text" id="telefone" name="telefone" pattern="\d{10,}" title="Informe um número de telefone válido (mínimo 10 dígitos)" placeholder="Telefone do contato" required>
             <button class="form-button" type="button" onclick="verificarCadastro()">Cadastrar</button>
         </form>
         
-        <table cellspacing="0" id="tabelaContatos">
+        <table cellspacing="0" id="tabela-contatos">
             <tr>
                 <th><span class="material-symbols-outlined">person</span>Nome</th> 
                 <th><span class="material-symbols-outlined">call</span>Telefone</th>
