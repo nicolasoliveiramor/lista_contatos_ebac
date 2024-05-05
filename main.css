@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-    background-color: #2E2E2E;
+    background-color: #0a1a1a;
 }
 
 header {
@@ -28,7 +28,7 @@ header {
 h1 {
     font-size: 40px;
     font-weight: bold;
-    color: #E7E7E7;
+    color: white;
     text-align: center;
     margin-bottom: 24px;
 }
@@ -37,7 +37,7 @@ h1 {
     max-width: 720px;
     width: 100%;
     margin: 0 auto;
-    background-color: #2E2E2E;
+    background-color: #3E3E3E;
     border: 8px solid white;
     border-radius: 8px;
     padding: 20px;
