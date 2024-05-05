@@ -15,7 +15,7 @@ body {
 }
 
 header {
-    max-width: 580px;
+    max-width: 960px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -32,7 +32,7 @@ h1 {
 }
 
 .container {
-    max-width: 860px;
+    max-width: 960px;
     width: 100%;
     margin: 0 auto;
     background-color: #2E2E2E;
@@ -42,19 +42,19 @@ h1 {
 }
 
 form {
-    max-width: 580px;
+    max-width: 960px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 20px;
-    margin-left: 14%;
+    align-items: center;
 }
 
 form input {
     font-size: 18px;
     background-color: white;
     border: none;
-    padding: 8px;
+    padding: 6px;
     border-radius: 6px;
 }
 
@@ -68,7 +68,7 @@ form button {
 }
 
 table {
-    max-width: 580px;
+    max-width: 960px;
     width: 100%;
     margin: 0 auto;
 }
@@ -80,6 +80,7 @@ table th, table td {
     font-weight: bold;
     color: white;
     text-align: center;
+    align-items: center;
 }
 
 span {
