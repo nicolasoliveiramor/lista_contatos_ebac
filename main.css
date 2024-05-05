@@ -42,8 +42,7 @@ h1 {
 }
 
 form {
-    max-width: 960px;
-    width: 100%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 20px;
@@ -63,8 +62,8 @@ form button {
     background-color: white;
     color: black;
     font-weight: bold;
-    border-radius: 6px;
     padding: 8px;
+    border-radius: 6px;
 }
 
 table {
@@ -75,7 +74,7 @@ table {
 
 table th, table td {
     border-bottom: 2px solid white;
-    padding: 16px;
+    padding: 20px;
     font-size: 16px;
     font-weight: bold;
     color: white;
