@@ -42,6 +42,8 @@ h1 {
 }
 
 form {
+    max-width: 720px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
