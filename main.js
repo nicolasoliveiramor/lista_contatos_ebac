@@ -6,8 +6,8 @@ form.addEventListener('submit', function (e) {
 }); 
 
 function verificarCadastro() {
-    let nome = document.getElementById("nome").value;
-    let telefone = document.getElementById("telefone").value;
+    let nome = document.getElementById("nome").value.trim;
+    let telefone = document.getElementById("telefone").value.trim;
     
     if (nome === '' || telefone === '') {
         alert('Por favor preencha todos os campos')
@@ -16,7 +16,7 @@ function verificarCadastro() {
     let tabela = document.getElementById("tabela-contatos");
     let linhas = tabela.rows;
 
-    for (let i = 1; i < linhas.length; i++) {
+    for (let i = 0; i < linhas.length; i++) {
             let celulaNome = linhas[i].cells[0];
             let nomeExistente = celulaNome.textContent.trim();
 
@@ -24,12 +24,7 @@ function verificarCadastro() {
             let telefoneExistente = celulaTelefone.textContent.trim();
             
             if (telefoneExistente === telefone){
-                alert(`Este telefone ${telefone} já pertence a outro contato.`);
-                return;
-            }
-
-            if (nomeExistente.toLowerCase() === nome.toLowerCase()) {
-                alert(`Este contato com o nome: ${nome} já está cadastrado.`);
+                alert(`Este telefone ${telefone} já pertence ao contato: ${nomeExistente}.`);
                 return;
             }
 
